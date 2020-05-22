@@ -1,0 +1,44 @@
+{
+    "BatteryInfo":" Battery Information",
+    "CpuInfo":"Cpu Information in french",
+    "MultilanguageApp":"Title..French",
+    "manufacturer":"manufacturer",
+    "brand":"brand",
+    "vendor":"vendor",
+    "family":"family",
+    "model":"model",
+    "CPU":"CPU",
+    "stepping":"stepping",
+    "revision":"revision",
+    "voltage":"voltage",
+    "speed":"speed",
+    "governor":"governor",
+    "hasbattery":"hasbattery",
+    "cyclecount":"cyclecount",
+    "ischarging":"ischarging",
+    "designedcapacity":"designedcapacity",
+    "maxcapacity":"maxcapacity",
+    "currentcapacity":"currentcapacity",
+    "capacityUnit":"capacityUnit",
+    "percent":"percent",
+    "timeremaining":"timeremaining",
+    "acconnected":"acconnected",
+    "serial":"serial",
+    "designcapacity":"designcapacity",
+    "cores":"cores",
+    "processors":"processors",
+    "socket":"socket",
+    "Battery":"Battery",
+    "type":"type",
+    "system":"System",
+    "Bios":"Bios",
+    "BaseBoard":"BaseBoard",
+    "Chassis":"chassis"
+
+
+
+
+
+
+
+}

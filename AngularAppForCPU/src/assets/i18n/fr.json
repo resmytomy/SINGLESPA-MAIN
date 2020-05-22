@@ -1,0 +1,39 @@
+{
+    "BatteryInfo":" Battery Information in french",
+    "CpuInfo":"Cpu Information in french",
+    "MultilanguageApp":"Title..French",
+    "manufacturer":"fabricante",
+    "brand":"marque",
+    "vendor":"vendeuse",
+    "family":"famille",
+    "model":"modèle",
+    "CPU":"CPU",
+    "stepping":"faire un pas",
+    "revision":"révision",
+    "voltage":"Tension",
+    "speed":"la vitesse",
+    "governor":"gouverneure",
+    "hasbattery":"a une batterie",
+    "cyclecount":"nombre de cycles",
+    "ischarging":"est en charge",
+    "designedcapacity":"capacité conçue",
+    "maxcapacity":"capacité maximale",
+    "currentcapacity":"capacité actuelle",
+    "capacityUnit":"capacitéUnité",
+    "percent":"pour cent",
+    "timeremaining":"temps restant",
+    "acconnected":"connecté",
+    "serial":"en série",
+    "designcapacity":"capacité de conception",
+    "cores":"noyaux",
+    "processors":"processeurs",
+    "socket":"prise",
+    "Battery":"batterie"
+
+
+
+
+
+
+
+}

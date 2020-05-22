@@ -1,0 +1,71 @@
+<div class="card-wrapper">
+    <div class="card"> 
+     <h5 class="card-header text-center font-weight-bold text-uppercase">System</h5>
+        <div id="table" class="table-editable">
+          <table class="table">
+           
+            <tr *ngFor="let details of system ">
+              <td>
+                <span >{{details.name | translate}}</span>
+              </td>
+              <td>
+                <span>{{details.value | translate}}</span>
+              </td>
+            </tr>
+          </table>
+          </div>
+    </div>
+    
+    <div class="card">
+      <h5 class="card-header text-center font-weight-bold text-uppercase">Bios</h5>
+      <div id="table" class="table-editable">
+          <table class="table">
+            <tr *ngFor="let details of bios ">
+              <td>
+                <span >{{details.name | translate}}</span>
+              </td>
+              <td>
+                <span>{{details.value | translate}}</span>
+              </td>
+              </tr>
+          </table>
+   
+      </div>
+    </div>
+    
+    <div class="card"> 
+      <h5 class="card-header text-center font-weight-bold text-uppercase">BaseBoard</h5>
+
+        <div id="table" class="table-editable">
+          <table class="table">
+            <tr *ngFor="let details of baseBoard ">
+              <td>
+                <span >{{details.name | translate}}</span>
+              </td>
+              <td>
+                <span>{{details.value | translate}}</span>
+              </td>
+              </tr>
+          </table>
+       
+      </div>
+    </div>
+    <div class="card"> 
+      <h5 class="card-header text-center font-weight-bold text-uppercase">Chassis</h5>
+
+        <div id="table" class="table-editable">
+          <table class="table">
+            <tr *ngFor="let details of chassis ">
+              <td>
+                <span >{{details.name | translate}}</span>
+              </td>
+              <td>
+                <span>{{details.value | translate}}</span>
+              </td>
+              </tr>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+    

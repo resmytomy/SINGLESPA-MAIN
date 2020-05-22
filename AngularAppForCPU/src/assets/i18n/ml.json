@@ -1,0 +1,43 @@
+{
+    "BatteryInfo":" Battery Information in Malayalam",
+    "CpuInfo":"Cpu Information in Malyalam",
+    "MultilanguageApp":"Title..Mal",
+    "manufacturer":"നിർമ്മാതാവ്",
+    "brand":"ബ്രാൻഡ്",
+    "vendor":"വെണ്ടർ",
+    "family":"കുടുംബം",
+    "model":"മോഡൽ",
+    "CPU":"സിപിയു",
+    "stepping":"സ്റ്റെപ്പിംഗ്",
+    "revision":"പുനരവലോകനം",
+    "voltage":"വോൾട്ടേജ്",
+    "speed":"വേഗത",
+    "speedmin":"കുറഞ്ഞ വേഗത",
+    "speedmax":"പരമാവധി വേഗത",
+    "governor":"ഗവർണർ",
+    "hasbattery":"ബാറ്ററി ഉണ്ട്",
+    "cyclecount":"സൈക്കിൾ എണ്ണം",
+    "ischarging":"ചാർജ്ജുചെയ്യുന്നു",
+    "designedcapacity":"രൂപകൽപ്പന ചെയ്ത ശേഷി",
+    "maxcapacity":"പരമാവധി ശേഷി",
+    "currentcapacity":"നിലവിലെ ശേഷി",
+    "capacityUnit":"ശേഷി യൂണിറ്റ്",
+    "percent":"ശതമാനം",
+    "timeremaining":"ശേഷിക്കുന്ന സമയം",
+    "acconnected":"ബന്ധിപ്പിച്ചിരിക്കുന്നു",
+    "type":"ടൈപ്പ്",
+    "serial":"സീരിയൽ",
+    "designcapacity":"ഡിസൈൻ‌ കപ്പാസിറ്റി",
+    "cores":"കോറുകൾ",
+    "physicalCores":"ഫിസിക്കൽ കോറുകൾ",
+    "processors":"പ്രോസസ്സറുകൾ",
+    "socket":"സോക്കറ്റ്",
+    "cache":"കാഷെ",
+    "Battery":"ബാറ്ററി"
+
+
+
+
+
+
+}

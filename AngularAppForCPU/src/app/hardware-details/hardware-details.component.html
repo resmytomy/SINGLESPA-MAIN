@@ -1,0 +1,31 @@
+<!-- Editable table -->
+<div class="card-wrapper">
+    <div class="card"><i class="fas fa-microchip"></i>{{'CPU' |translate }}
+    <div class="card-body">
+        <table>
+          <tr *ngFor="let fileContents of batteryDetails">
+            <td>{{fileContents.name | translate }}</td>
+           <td>{{fileContents.value | translate}}</td>
+          
+         </tr>
+        </table>
+      </div>
+     
+    </div>
+    
+  <div class="card"><i class="fas fa-microchip"></i>{{'Battery' |translate }}
+    {{language}}
+      <div class="card-body">
+        <table >
+  
+            <tr *ngFor="let fileContents of batteryDetails">
+              <td>{{fileContents.name | translate}}</td>
+             <td>{{fileContents.value | translate}}</td>
+            
+           </tr>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+   
