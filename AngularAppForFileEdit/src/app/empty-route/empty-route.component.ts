@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fileEditApp-empty-route',
+  selector: 'logger-app-empty-route',
   template: '',
 })
 export class EmptyRouteComponent {

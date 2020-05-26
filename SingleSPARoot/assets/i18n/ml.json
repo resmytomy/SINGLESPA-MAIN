@@ -43,7 +43,11 @@
     "Log":"ലോഗുകൾ",
     "Select Language":"Select Language",
     "Tree":"ഫോൾഡർ ട്രീ",
-    "Folder Structure":"ഫോൾഡർ"
+    "Folder Structure":"ഫോൾഡർ",
+    "File Edit":"ഫയൽ എഡിറ്റ്",
+    "Data From npmrc":"Npmrc- ൽ നിന്നുള്ള ഡാറ്റ",
+    "Logs":"ലോഗുകൾ"
+ 
 
     
 

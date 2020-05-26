@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TerminalViewComponent } from './terminal-view.component';
+import { FileEditorComponent } from './file-editor.component';
 
 describe('FileEditorComponent', () => {
-  let component: TerminalViewComponent;
-  let fixture: ComponentFixture<TerminalViewComponent>;
+  let component: FileEditorComponent;
+  let fixture: ComponentFixture<FileEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TerminalViewComponent ]
+      declarations: [ FileEditorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TerminalViewComponent);
+    fixture = TestBed.createComponent(FileEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

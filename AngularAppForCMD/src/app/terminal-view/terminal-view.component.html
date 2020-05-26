@@ -1,1 +1,33 @@
-<p>terminal-view works!</p>
+
+<div>
+  <h4>Terminal View</h4>
+  <!-- <table><td> -->
+<input size="45" [(ngModel)]="command" >
+<span>
+ <button (click)="executeCommand(command)">{{'ExecuteCommand' | translate }}</button>
+</span>
+</div>
+ <div >
+<h5>Result</h5>
+    <textarea wrap="off" rows="15"  cols="45"  [(ngModel)]="result"></textarea>
+</div>
+
+ <div >
+  
+  <table >
+    <tr>
+      <th class="text-left">History</th>
+      <th class="text-left">Action</th>
+  
+    </tr>
+    <tr  *ngFor="let cmd of prevCommand">
+      <td>
+        <span>{{cmd}}</span>
+      </td>
+      <td>
+        <button (click)="copy(cmd)">Copy</button>   </td>
+       
+    </tr>
+  </table>
+</div>
+<!-- </table> -->

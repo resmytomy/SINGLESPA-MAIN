@@ -34,7 +34,10 @@
     "History":"History",
     "Terminal View": "Command Prompt",
     "Terminal":"Command Prompt",
-    "Folder Structure":"Folder Structure"
+    "Folder Structure":"Folder Structure",
+    "File Edit":"File Edit",
+    "Data From npmrc":"Data From npmrc",
+    "Logs":"Logs"
 
 
 

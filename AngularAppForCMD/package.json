@@ -1,15 +1,14 @@
 {
-  "name": "terminal-view-app",
+  "name": "filedit-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "npm run serve:single-spa",
     "build": "npm run build:single-spa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa": "ng build --prod --deploy-url http://localhost:4301/",
-    "serve:single-spa": "ng serve --disable-host-check --port 4301 --deploy-url http://localhost:4301/ --live-reload false"
+    "build:single-spa": "ng build --prod --deploy-url /dist/fileedit-app --output-hashing none",
+    "serve:single-spa": "ng serve --disable-host-check --port 4207 --deploy-url http://localhost:4207/ --live-reload false"
   },
   "private": true,
   "dependencies": {
@@ -19,11 +18,14 @@
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "rxjs": "~6.4.0",
-    "single-spa-angular": "^3.4.1",
+    "single-spa-angular": "^3.3.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

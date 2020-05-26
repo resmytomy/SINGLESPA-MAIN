@@ -14,16 +14,22 @@ app.use(function (req, res, next) {
 
 });
 
-const TerminalController = require('./controller/terminal-controller');
-const controller=new TerminalController();
+const fileController = require('./controller/file-editorController.js');
+const controller=new fileController();
 
-app.post('/executeCommand', controller.executeCommandCotroller);
+app.get('/', controller.readFileController);
 
-var server = app.listen(8095, function () {
+app.post('/edit', controller.writeFileController);
+
+var server = app.listen(8098, function () {
 
   var host = server.address().address
 
   var port = server.address().port
+
+
+
+  console.log("Example app listening at http://%s:%s", host, port)
 
 })
 

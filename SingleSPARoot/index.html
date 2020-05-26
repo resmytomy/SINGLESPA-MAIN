@@ -10,15 +10,13 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "terminal":"http://localhost:4301/main.js",
-          "cpu": "http://localhost:4203/main.js",
-          "logger":"http://localhost:4208/main.js",
-          "tree":"http://localhost:4206/main.js",
-          "fileEdit":"http://localhost:4302/main.js",
-
-         
-          "hw":"http://localhost:4204/main.js",
           "navBar": "http://localhost:4205/main.js",
+          "log": "http://localhost:4208/main.js",
+          "file": "http://localhost:4210/main.js",
+          "cpu": "http://localhost:4203/main.js",
+          "tree": "http://localhost:4206/main.js",
+          "hw": "http://localhost:4204/main.js",
+          "terminal": "http://localhost:4207/main.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.5/system/single-spa.min.js"
         }
       }
@@ -32,15 +30,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
     <style>
-     
     </style>
   </head>
   <body>
     <script>
-      
-
       System.import('single-spa').then(function (singleSpa) {
-       
+        singleSpa.registerApplication(
+          'file',
+          function () {
+            return System.import('file');
+          },
+          function (location) {
+            return location.pathname.startsWith('/file');
+           // return true;
+          }
+        )
+        singleSpa.registerApplication(
+          'cpu',
+          function () {
+            return System.import('cpu');
+          },
+          function (location) {
+            return location.pathname.startsWith('/cpu');
+           // return true;
+          }
+        )
+        singleSpa.registerApplication(
+          'log',
+          function () {
+            return System.import('log');
+          },
+          function (location) {
+            return location.pathname.startsWith('/log');
+           // return true;
+          }
+        )
         singleSpa.registerApplication(
           'terminal',
           function () {
@@ -48,80 +72,42 @@
           },
           function (location) {
             return location.pathname.startsWith('/terminal');
-            return true;
+            //return true;
+          }
+        )
+        
 
-          }
-        )
-        singleSpa.registerApplication(
-          'fileEdit',
-          function () {
-            return System.import('fileEdit');
-          },
-          function (location) {
-            return location.pathname.startsWith('/fileEdit');
-            return true;
-          }
-        )
-      
-        singleSpa.registerApplication(
-          'hw',
-          function () {
-            return System.import('hw');
-          },
-          function (location) {
-        return location.pathname.startsWith('/hw');
-            return true;
-          }
-        )
         singleSpa.registerApplication(
           'tree',
           function () {
             return System.import('tree');
           },
           function (location) {
-        return location.pathname.startsWith('/tree');
+            return location.pathname.startsWith('/tree');
             return true;
           }
         )
-       
+
         singleSpa.registerApplication(
-          'logger',
+          'hw',
           function () {
-            return System.import('logger');
+            return System.import('hw');
           },
           function (location) {
-            return location.pathname.startsWith('/logger');
-
+            return location.pathname.startsWith('/hw');
             return true;
           }
         )
-       
         singleSpa.registerApplication(
           'navBar',
           function () {
             return System.import('navBar');
           },
           function (location) {
-            // return location.pathname.startsWith('/app2');
-            return true;
+         //    return location.pathname.startsWith('/app1');
+          return true;
           }
-        )
-       
-       
-        singleSpa.registerApplication(
-          'cpu',
-          function () {
-            return System.import('cpu');
-          },
-          function (location) {
-         return location.pathname.startsWith('/cpu');
-            return true;
-          }
-        )
-      
-       
-
-;
+        );
         
         singleSpa.start();
       })

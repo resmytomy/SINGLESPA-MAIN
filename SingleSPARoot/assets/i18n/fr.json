@@ -38,7 +38,10 @@
     "Log":"Journaux",
     "Select Language":"Select Language",
     "Tree":"Arborescence des dossiers",
-    "Folder Structure":"Structure des dossiers"
+    "Folder Structure":"Structure des dossiers",
+    "File Edit":"fichier Edition",
+    "Data From npmrc":"Données de npmrc",
+    "Logs":"journaux"
 
 
 

@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "fileEditApp",
+      "loggerApp",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "file-edit-app",
+      "logger-app",
       "kebab-case"
     ],
     "import-blacklist": [

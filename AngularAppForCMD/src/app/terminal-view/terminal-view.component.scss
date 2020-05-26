@@ -1,0 +1,82 @@
+
+@media all and (min-width: 768px) {
+  table {
+    width: 450px;
+    margin: 0 ;
+    border: 1px solid #d1d1d1;
+    border-collapse: collapse;
+    font-size:13px;
+    color:#010101;
+    tr  {
+      border-bottom: 1px solid #d3d3d3;
+      th {
+        padding: 5px 2px;
+        background-color: #f1f5fd;
+      }
+      th:nth-child(2) {
+        border-left: 1px solid #d3d3d3;
+      }
+      td {
+        padding: 5px 2px;
+        span {
+          display:inline-block;
+          width:200px;
+        }
+      }
+      td:nth-child(2) {
+        border-left: 1px solid #d3d3d3;
+      }
+      :hover {
+        background-color: #f1f5fd;
+      }
+    }
+  }
+}
+// #background {
+//   position: fixed;
+//   top: 0px;
+//   bottom: 0px;
+//   left: 0px;
+//   right: 0px;
+//   width: 100%;
+//   height: 100%;
+//   background-color: black;
+//   margin: 0px;
+//   padding: 0px;
+// }
+
+// #console {
+//   margin: 0px;
+//   padding: 0px;
+// }
+
+// #consoletext {
+//   color: rgb(255, 255, 255);
+//   font-family: Monospace;
+//   margin: 10px 0px 0px 10px;
+// }
+// #textinput {
+//   resize: none;
+//   margin: 0px 0px 10px 10px;
+//   border: none;
+//   outline: none;
+//   background-color: rgb(0, 0, 0);
+//   color: rgb(255, 255, 255);
+//   font-family: Monospace;
+//   width: calc(100% - 20px);
+//   overflow: hidden;
+// }
+textarea {
+  background-color: #000;
+  border: 1px solid #000;
+  color:white;
+  padding: 8px;
+  font-family: courier new;
+}
+input {
+  background-color: #000;
+  border: 1px solid #000;
+  color: #f9fcf9;
+  padding: 8px;
+  font-family: courier new;
+}

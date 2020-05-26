@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "terminalViewApp",
+      "loggerApp",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "terminal-view-app",
+      "logger-app",
       "kebab-case"
     ],
     "import-blacklist": [
