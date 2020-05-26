@@ -1,10 +1,11 @@
 <ul>
-  <li> <a routerLink="/cpu"> {{ 'CPU & Battery'| translate }}</a></li>
-  <li> <a routerLink="/terminal"> {{ 'Terminal'| translate }} </a></li>
-  <li> <a routerLink="/logger"> {{ 'Log'| translate }} </a></li>
+  <li> <a routerLink="/file"> {{ 'File Edit'| translate }}</a></li>
+  <li> <a routerLink="/cpu"> {{ 'CPU & Battery'| translate }} </a></li>
   <li> <a routerLink="/hw"> {{ 'HW'| translate }} </a></li>
   <li> <a routerLink="/tree"> {{ 'Tree'| translate }} </a></li>
-  <li> <a routerLink="/fileEdit"> {{ 'File'| translate }} </a></li>
+  <li> <a routerLink="/terminal"> {{ 'Terminal'| translate }} </a></li>
+  <li> <a routerLink="/log"> {{ 'Logs'| translate }} </a></li>
+  <!-- <li> <a routerLink="/header"> {{ 'File'| translate }} </a></li> -->
   <li>Select Language <select (change)="changeLang($event.target.value)">
       <option>en</option>
       <option>fr</option>
