@@ -50,8 +50,6 @@ describe('Terminal View Component ', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     window.addEventListener('languageTranslation', spy);
-
-    // spyOn(console, 'log');
   });
 
   it('should create', () => {
@@ -114,13 +112,36 @@ describe('Terminal View Component ', () => {
 
   }));
 
-it('should',async(()=>{
-  const customEvent=new CustomEvent('languageTranslation', {detail:'ML'});
-  window.dispatchEvent(customEvent);
-component.eventsCreation();
-  expect(spy).toHaveBeenCalled();
-}))
+  it('should', async(() => {
 
+    const customEvent = new CustomEvent('languageTranslation', { detail: 'ML' });
+    window.dispatchEvent(customEvent);
+    component.eventsCreation();
+    expect(spy).toHaveBeenCalled();
+  }))
+
+  it('should call tstfunction ', async(() => {
+
+    var testobj = {
+      testFunction: (lang) => {
+        //this.translate.use(lang); 
+      }
+
+    }
+
+    window.dispatchEvent(new CustomEvent('LangChangeEvent', { detail: { testobj } }));
+    window.addEventListener('LangChangeEvent', (evt: CustomEvent) => {
+
+      evt.detail.testobj.testFunction("MALLL");
+
+    })
+    const xService = fixture.debugElement.injector.get(TranslateService);
+    const mockCall = spyOn(xService, 'use');
+    component.eventsCreation();
+    expect(mockCall).toHaveBeenCalled();
+
+
+  }))
 
 
 });

@@ -23,8 +23,7 @@ export class TerminalViewComponent {
   eventsCreation() {
     var testobj ={ 
       testFunction: (lang)=>{
-      TerminalViewComponent.language=lang;
-      this.translate.use(lang); 
+       this.translate.use(lang); 
     }
 
     }
