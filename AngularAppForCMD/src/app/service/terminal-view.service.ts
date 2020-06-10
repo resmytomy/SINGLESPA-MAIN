@@ -17,11 +17,7 @@ export class TermnalViewService {
   }
  
 
-  updateFileContents(data): Observable<string> {
- 
-    console.log(data);
-    // const params = new HttpParams().set('params', data);
-    // return this.http.get<string>('http://localhost:8080/edit/'+data);
+  executeCOmmand(data): Observable<string> {
     return this.http.post<string>('http://localhost:8095/executeCommand ',{'data':data});
 
   }

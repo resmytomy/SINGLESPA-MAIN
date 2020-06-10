@@ -14,16 +14,19 @@ export class TerminalViewComponent {
   static previousCommands:string[]=[];
   result:any;
   command:string;
-  
- 
   loading: boolean = false;
   errorMessage
+  static language;
   ngOnInit(): void {
-    var testobj ={ testFunction: (lang)=>{
-      console.log("inside custom function")
-      this.translate.use(lang);  
-    }}
-    window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
+    var testobj ={ 
+      testFunction: (lang)=>{
+      TerminalViewComponent.language=lang;
+      this.translate.use(lang); 
+    }
+
+    }
+  
+   // window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
     window.addEventListener('languageTranslation', (evt:CustomEvent) => {
       this.translate.use(evt.detail.language);
     
@@ -35,7 +38,7 @@ export class TerminalViewComponent {
 
     TerminalViewComponent.previousCommands.push(command);
     console.log('inside update')
-    this.service.updateFileContents(command)
+    this.service.executeCOmmand(command)
     .subscribe(
       (response) => {                          
         console.log('response received'+response)
