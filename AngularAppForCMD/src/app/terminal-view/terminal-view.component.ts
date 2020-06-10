@@ -18,6 +18,9 @@ export class TerminalViewComponent {
   errorMessage
   static language;
   ngOnInit(): void {
+    this.eventsCreation();
+   }
+  eventsCreation() {
     var testobj ={ 
       testFunction: (lang)=>{
       TerminalViewComponent.language=lang;
@@ -26,12 +29,11 @@ export class TerminalViewComponent {
 
     }
   
-   // window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
+  window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
     window.addEventListener('languageTranslation', (evt:CustomEvent) => {
       this.translate.use(evt.detail.language);
     
-    })
-   }
+    })  }
  
   executeCommand(command) {
     window.dispatchEvent(new CustomEvent('logging-event', {detail:{ "val": "COmmand executed"+command}}));

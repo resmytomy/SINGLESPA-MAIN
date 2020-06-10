@@ -14,6 +14,8 @@ export const createTranslateLoader = function HttpLoaderFactory(http: HttpClient
 }
 const TRANSLATIONS_EN = require('../../assets/i18n/en.json');
 const TRANSLATIONS_ML = require('../../assets/i18n/ml.json');
+const spy = jasmine.createSpy('spy');
+
 describe('Terminal View Component ', () => {
   let httpTestingController: HttpTestingController;
   let component: TerminalViewComponent;
@@ -49,6 +51,8 @@ describe('Terminal View Component ', () => {
     fixture = TestBed.createComponent(TerminalViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    window.addEventListener('languageTranslation', spy);
+
     // spyOn(console, 'log');
   });
 
@@ -112,7 +116,12 @@ describe('Terminal View Component ', () => {
 
   }));
 
-
+it('should',async(()=>{
+  const customEvent=new CustomEvent('languageTranslation', {detail:'ML'});
+  window.dispatchEvent(customEvent);
+component.eventsCreation();
+  expect(spy).toHaveBeenCalled();
+}))
 
 
 
