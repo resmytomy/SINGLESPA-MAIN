@@ -1,18 +1,16 @@
-class TerminalController{ 
-    constructor(){}
-    executeCommandCotroller (req, res)  {
+const CommandProcessingService = require('../service/terminalService');
 
-const  CommandProcessingService   =require('../service/terminalService');
- const cmdExc=new CommandProcessingService();
-    console.log('Indide controller')
-    console.log('requsrt is ',
-    req)
+class TerminalController {
+    constructor() {
+        this.cmdExc = new CommandProcessingService();
+    }
+    executeCommandCotroller(req, res) {
 
-    cmdExc.getResult(req)
-    .then(data =>res.json(data))
-    .catch(err => res.json(err));
-   
-}
+        this.cmdExc.getResult(req)
+            .then(data => res.json(data))
+            .catch(err => res.json(err));
+
+    }
 
 }
-module.exports=TerminalController;
+module.exports = TerminalController;
