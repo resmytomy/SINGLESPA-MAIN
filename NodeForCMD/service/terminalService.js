@@ -1,7 +1,9 @@
 const exec = require("child_process").exec;
 
 class CommandProcessingService {
-  constructor() { }
+  
+   constructor() {
+  }   
   getResult(req) {
     console.log('inside sevice')
     var cmd = req.body.data
@@ -16,6 +18,7 @@ class CommandProcessingService {
     })
   }
 
-
 }
-module.exports = CommandProcessingService;
+newObject=new CommandProcessingService();
+
+module.exports = newObject;
