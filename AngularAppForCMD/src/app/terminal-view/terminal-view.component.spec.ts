@@ -12,8 +12,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export const createTranslateLoader = function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-const TRANSLATIONS_EN = require('../../assets/i18n/en.json');
-const TRANSLATIONS_ML = require('../../assets/i18n/ml.json');
 const spy = jasmine.createSpy('spy');
 
 describe('Terminal View Component ', () => {
