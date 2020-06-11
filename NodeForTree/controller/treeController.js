@@ -1,16 +1,12 @@
-const CpuDetails=require('../service/FolderDetails')
+const folderDetailsObj=require('../service/FolderDetails')
 
-class treeController{ 
-    constructor(){
-        this. details=new CpuDetails();
-    }
+class treeController{     
  
 getDetails= (req, res) => {
-
-   this.details. getDirr("A")
+   
+    folderDetailsObj. getDirr("A")
     .then(out=>res.json(out))
     .catch(err=>res.json(err))
-
 
 }
 
