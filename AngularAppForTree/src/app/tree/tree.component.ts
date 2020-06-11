@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { TreeNode } from './tree-node';
-import {TreeService} from './treeService'
+import {TreeService} from '../service/tree.service'
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -24,16 +24,20 @@ export class TreeComponent implements OnInit {
       }
   }
   ngOnInit() {
-    var testobj ={ testFunction: (lang)=>{
-      this.translate.use(lang);  
-    }}
-    window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
-    window.addEventListener('languageTranslation', (evt:CustomEvent) => {
-      this.translate.use(evt.detail.language);
-    
-    })
+    this.eventsCreation();
+   
   }
+eventsCreation(){
+  var testobj ={ testFunction: (lang)=>{
+    this.translate.use(lang);  
+  }}
+  window.dispatchEvent(new CustomEvent('LangChangeEvent', {detail:{testobj}}));
+  window.addEventListener('languageTranslation', (evt:CustomEvent) => {
+    this.translate.use(evt.detail.language);
+  
+  })
 
+}
   toggleChild(node) {
     node.showChildren = !node.showChildren;
   }
@@ -62,19 +66,5 @@ export class TreeComponent implements OnInit {
         },
         )
   }
-  onCheck(e: any) {
-    console.log('%c Returned checked object ', 'background: #222; color:  #ff8080');
-    console.log(e);
-    console.log('%c ************************************ ', 'background: #222; color: #bada05');
-  }
-  onCheckedKeys(e: any) {
-    console.log('%c Returned array with checked checkboxes ', 'background: #222; color: #bada55');
-    console.log(e);
-    console.log('%c ************************************ ', 'background: #222; color: #bada05');
-  }
-  onNodesChanged(e: any) {
-    console.log('%c Returned json with marked checkboxes ', 'background: #222; color: #99ccff');
-    console.table(e);
-    console.log('%c ************************************ ', 'background: #222; color: #bada05');
-  }
+  
 }

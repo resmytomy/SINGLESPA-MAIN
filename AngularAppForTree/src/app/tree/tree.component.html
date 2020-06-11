@@ -6,7 +6,7 @@
 <div tree=treeData>
 <ul *ngIf="treeData" let tree =treeData>
   <li *ngFor="let node of treeData">
- <div *ngIf="node.children!=0 && node.type=='folder'" (click)="toggleChild(node)">  <i class="material-icons">chevron_right</i><i class="material-icons">folder</i> {{node.name}}</div>
+ <div class ="toggle" *ngIf="node.children!=0 && node.type=='folder'" (click)="toggleChild(node)">  <i class="material-icons">chevron_right</i><i class="material-icons">folder</i> {{node.name}}</div>
  <div *ngIf ="node.type=='file' "> <i class='far fa-file-image'></i>{{node.name}}</div>
 
  <div *ngIf ="node.type=='folder' && node.children==0 "> <i class="material-icons">folder</i> {{node.name}}</div>

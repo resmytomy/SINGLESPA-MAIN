@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run serve:single-spa",
     "build": "npm run build:single-spa",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:single-spa": "ng build --prod --deploy-url /dist/AngularPrjtForTree --output-hashing none",
