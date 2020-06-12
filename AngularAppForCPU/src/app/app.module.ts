@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
-import { HardwareDetailsComponent } from './hardware-details/hardware-details.component';
+import { CpuDetailsComponent } from './cpu-details/cpu-details.component';
 export const createTranslateLoader=function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -15,7 +15,7 @@ export const createTranslateLoader=function HttpLoaderFactory(http: HttpClient) 
   declarations: [
     AppComponent,
     EmptyRouteComponent,
-    HardwareDetailsComponent
+    CpuDetailsComponent
   ],
   imports: [
     BrowserModule,
