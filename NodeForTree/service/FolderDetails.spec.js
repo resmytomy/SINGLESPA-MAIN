@@ -23,7 +23,7 @@ describe("Tree structure API", () => {
           showChildren: false,
           name: 'B',
           type: 'folder',
-          children: [Array]
+          children: []
         }
       ]
     };
@@ -45,18 +45,16 @@ describe("Tree structure API", () => {
         return true;
       }
     };
-    fs.readdir.mockImplementation((file, cb) => cb(null, mockList));
+    fs.readdir.mockImplementationOnce((file, cb) => cb(null, mockList));
+    fs.readdir.mockImplementation((file, cb) => cb(null, []));
     fs.stat.mockImplementationOnce((file, cb) => cb(null, mockStatOnce));
     fs.stat.mockImplementation((file, cb) => cb(null, mockStat));
     folderDetailsObj.getDirr('A').then((response) => {
       expect(response).toEqual(mockResponse);
-
-
-
+      done();
     })
 
-    done();
-
+   
   });
   it("it should check whether getFolderDetails is returning an error if there is nay error from fs.readdir", done => {
     const mockList = [
