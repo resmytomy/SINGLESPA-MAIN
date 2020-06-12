@@ -8,24 +8,10 @@ describe("Tree structure API", () => {
     const mockList = [
       "B", "TextDoc.rtf"
     ];
-    const mockResponse = {
-      showChildren: false,
-      name: 'A',
-      type: 'folder',
-      children: [
-        {
-          name: 'TextDoc.rtf',
-          showChildren: true,
-          type: 'file',
-          children: []
-        },
-        {
-          showChildren: false,
-          name: 'B',
-          type: 'folder',
-          children: []
-        }
-      ]
+    const mockResponse = {  showChildren: false,  name: 'A', type: 'folder', children: [
+        { name: 'TextDoc.rtf',     showChildren: true,type: 'file',   children: []
+        },    {showChildren: false,name: 'B', type: 'folder',  children: []
+        } ]
     };
 
     const mockStatOnce = {
@@ -60,16 +46,7 @@ describe("Tree structure API", () => {
     const mockList = [
       "B", "TextDoc.rtf"
     ];
-
-    const mockStatOnce = {
-      isDirectory() {
-        return true;
-      },
-      isFile() {
-        return false;
-      }
-    };
-
+  
     const mockStat = {
       isDirectory() {
         return false;
@@ -79,24 +56,32 @@ describe("Tree structure API", () => {
       }
     };
     fs.readdir.mockImplementation((file, cb) => cb(new Error("Error occured"), null));
-    fs.stat.mockImplementationOnce((file, cb) => cb(null, mockStatOnce));
     fs.stat.mockImplementation((file, cb) => cb(null, mockStat));
-    folderDetailsObj.getDirr('A').catch(err => expect(err.message).toBe("Error occured"));
-    fs.stat.mockReset();
-    done();
+    folderDetailsObj.getDirr('A').catch((response) => {
+      console.log('ooooo',response.message)
+      expect(response.message).toEqual("Error occured");
+      done();
+    })
+  
 
   });
 
-  it("it should check whether getFolderDetails is returning an error if there is nay error from fs.stat", done => {
+  test("it should check whether getFolderDetails is returning an error if there is nay error from fs.stat", done => {
     const mockList = [
       "B", "TextDoc.rtf"
     ];
-    fs.stat.mockReset();
+    fs.readdir.mockReset();
 
     fs.readdir.mockImplementation((file, cb) => cb(null, mockList));
-    fs.stat.mockImplementation((file, cb) => cb(new Error("Error occured"), true));
-    folderDetailsObj.getDirr('A').catch(err => expect(err.message).toBe("Error occured"))
+    fs.stat.mockImplementation((file, cb) => cb(new Error("Error occured"), null));
+   // folderDetailsObj.getDirr('A').catch(err => expect(err.message).toBe("Error occured"))
+   folderDetailsObj.getDirr('A').catch((response) => {
+    console.log('ooooo',response.message)
+    expect(response.message).toEqual("Error occured");
     done();
+  })
+
+   
 
   });
 

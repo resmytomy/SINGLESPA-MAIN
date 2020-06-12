@@ -24,7 +24,8 @@ class FolderDetails {
           fs.stat(fromPath, (error, stat) => {
 
             if (error) {
-             reject(err);
+             reject(error);
+             return;
             }
             if (stat.isFile()) {
               var children = {
