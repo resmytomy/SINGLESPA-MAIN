@@ -58,7 +58,6 @@ describe("Tree structure API", () => {
     fs.readdir.mockImplementation((file, cb) => cb(new Error("Error occured"), null));
     fs.stat.mockImplementation((file, cb) => cb(null, mockStat));
     folderDetailsObj.getDirr('A').catch((response) => {
-      console.log('ooooo',response.message)
       expect(response.message).toEqual("Error occured");
       done();
     })
@@ -74,9 +73,7 @@ describe("Tree structure API", () => {
 
     fs.readdir.mockImplementation((file, cb) => cb(null, mockList));
     fs.stat.mockImplementation((file, cb) => cb(new Error("Error occured"), null));
-   // folderDetailsObj.getDirr('A').catch(err => expect(err.message).toBe("Error occured"))
-   folderDetailsObj.getDirr('A').catch((response) => {
-    console.log('ooooo',response.message)
+     folderDetailsObj.getDirr('A').catch((response) => {
     expect(response.message).toEqual("Error occured");
     done();
   })
