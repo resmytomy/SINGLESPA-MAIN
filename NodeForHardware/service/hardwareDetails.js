@@ -55,6 +55,6 @@ getChassisDetails(){
 
 
 }
-
-module.exports=hardWareDetails;
+hardwareDetailsObject=new hardWareDetails()
+module.exports=hardwareDetailsObject;
 

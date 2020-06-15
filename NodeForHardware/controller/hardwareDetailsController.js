@@ -1,16 +1,15 @@
-const hardWareDetails=require('../service/hardwareDetails')
+const hardwareDetailsObject=require('../service/hardwareDetails')
 
 class hardwareDetailsController{ 
     constructor(){
-        this. hardwareDet=new hardWareDetails();
     }
  
 getDetails= (req, res) => {
 console.log("controller")
-    const system= this.hardwareDet.getSystemDetails();
-    const bios=this.hardwareDet.getBiosDetails();
-    const baseBoard=this.hardwareDet.getBaseboardDetails();
-    const chassis=this.hardwareDet.getChassisDetails();
+    const system= hardwareDetailsObject.getSystemDetails();
+    const bios=hardwareDetailsObject.getBiosDetails();
+    const baseBoard=hardwareDetailsObject.getBaseboardDetails();
+    const chassis=hardwareDetailsObject.getChassisDetails();
     Promise.all(
      [ system.catch(error => { return error; }),
         bios.catch(error => { return error; }),
