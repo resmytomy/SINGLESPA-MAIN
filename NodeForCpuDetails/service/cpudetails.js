@@ -5,18 +5,16 @@ class CpuDetails{
 
 
 getCpuDetails () {
+
   return new Promise((resolve, reject) => {
-
-    si.cpu((err,data)=>{
-      if (err){
-        reject(err)
-        return;
-      }
-      resolve(data)
-         
-
+      si.cpu((err,data)=>{
+        if (err){
+          reject(err)
+        }
+     
+        resolve(data)   })
     })
-  })
+  
 
 }
 getBatteryDetails(){
@@ -34,6 +32,7 @@ getBatteryDetails(){
 
 
 }
+cpuDetailsObject=new CpuDetails();
 
-module.exports=CpuDetails;
+module.exports=cpuDetailsObject;
 

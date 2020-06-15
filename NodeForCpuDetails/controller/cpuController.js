@@ -1,17 +1,15 @@
-const CpuDetails=require('../service/cpudetails')
+const cpuDetailsObject=require('../service/cpudetails')
 
 class cpuDetailsController{ 
     constructor(){
-        this. cpuDet=new CpuDetails();
     }
  
 getDetails= (req, res) => {
-
-    const cpu= this.cpuDet.getCpuDetails()
-    const batt=this.cpuDet.getBatteryDetails();
+    const cpu= cpuDetailsObject.getCpuDetails()
+    const batt=cpuDetailsObject.getBatteryDetails();
     Promise.all(
      [cpu.catch(error => { return error; }),
-     batt.catch(error => { return error; })])
+      batt.catch(error => { return error; })])
     .then(values=>{
         const harwdareDetails={
             'cpu':values[0],
