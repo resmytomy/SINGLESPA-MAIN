@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cpuContent } from './cpuContents';
-import {cpuDataService} from './cpuDataService';
+import {HardwareDetailsService} from '../service/hardware-details.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HardwareDetailsComponent implements OnInit {
 
-  constructor(private cpuDataService: cpuDataService,public translate: TranslateService) {}
+  constructor(private cpuDataService: HardwareDetailsService,public translate: TranslateService) {}
   systemInfo;
   biosInfo;
   baseBoardInfo;
@@ -24,21 +24,23 @@ export class HardwareDetailsComponent implements OnInit {
   loading: boolean = false;
   errorMessage
   ngOnInit(): void {
-    console.log("Start")
-    var testobj ={ testFunction: (lang)=>{
-      this.translate.use(lang);  
-    }}
-    window.dispatchEvent(new CustomEvent('testEvent', {detail:{testobj}}));
-   
-    window.addEventListener('languageTranslation', (evt:CustomEvent) => {
-      console.log("Language tr")
-      var language = evt.detail.language;
-      localStorage.setItem('locale', language);  
-      this.translate.use(language);  
-    })
+    this.eventsCreation();    
     this.getHardWareDetails();
-    console.log('this.getfile') 
    }
+
+   eventsCreation() {
+    var testobj = {
+      testFunction: (lang) => {
+        this.translate.use(lang);
+      }
+    }
+    window.dispatchEvent(new CustomEvent('LangChangeEvent', { detail: { testobj } }));
+    window.addEventListener('languageTranslation', (evt: CustomEvent) => {
+      this.translate.use(evt.detail.language);
+
+    })
+
+  }
   public getHardWareDetails() {
     window.dispatchEvent(new CustomEvent('logging-event', {detail:{ "val": "Hrdware Details From CPU COmponent"}}));
 
