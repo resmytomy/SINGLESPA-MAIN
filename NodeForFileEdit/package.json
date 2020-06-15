@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "test": "jest --watchAll --coverage ",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "connect": "^3.7.0",
@@ -13,6 +15,12 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "systeminformation": "^4.23.3"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "nock": "^12.0.3",
+    "supertest": "^4.0.2"
   }
 }
