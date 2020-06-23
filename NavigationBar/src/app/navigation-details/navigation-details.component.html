@@ -1,15 +1,20 @@
-<ul>
-  <li> <a routerLink="/file"> {{ 'File Edit'| translate }}</a></li>
-  <li> <a routerLink="/cpu"> {{ 'CPU & Battery'| translate }} </a></li>
-  <li> <a routerLink="/hw"> {{ 'HW'| translate }} </a></li>
-  <li> <a routerLink="/tree"> {{ 'Tree'| translate }} </a></li>
-  <li> <a routerLink="/terminal"> {{ 'Terminal'| translate }} </a></li>
-  <li> <a routerLink="/log"> {{ 'Logs'| translate }} </a></li>
-  <!-- <li> <a routerLink="/header"> {{ 'File'| translate }} </a></li> -->
-  <li>Select Language <select (change)="changeLang($event.target.value)">
-      <option>en</option>
-      <option>fr</option>
-      <option>ml</option>
-    </select> </li>
+<div>
+  <ul>
+    <li> <a *ngIf="!readSessionStorage()" routerLink="/Login"> {{ 'Login'| translate }} </a></li>
+    <li> <a *ngIf="readPermission()" routerLink="/file"> {{ 'File Edit'| translate }}</a></li>
+    <li> <a *ngIf="readSessionStorage()" routerLink="/cpu"> {{ 'CPU & Battery'| translate }} </a></li>
+    <li> <a *ngIf="readSessionStorage()" routerLink="/hw"> {{ 'HW'| translate }} </a></li>
+    <li> <a *ngIf="readSessionStorage()" routerLink="/tree"> {{ 'Tree'| translate }} </a></li>
+    <li> <a *ngIf="readSessionStorage()" routerLink="/terminal"> {{ 'Terminal'| translate }} </a></li>
+    <li> <a *ngIf="readSessionStorage()" routerLink="/log"> {{ 'Logs'| translate }} </a></li>
+    <li> <a *ngIf="readPermission()" routerLink="/add"> {{ 'Add User'| translate }} </a></li>
+    <li *ngIf="readSessionStorage()" id="lang">Select Language <select (change)="changeLang($event.target.value)">
+        <option>en</option>
+        <option>fr</option>
+        <option>ml</option>
+      </select> </li>
+      <li> <a *ngIf="readSessionStorage()" (click)="LogOut()"> {{ 'Logout'| translate }} </a></li>
 
-</ul>
+
+
+    <router-outlet></router-outlet>

@@ -1,4 +1,7 @@
-<!-- Editable table -->
+
+<h4  *ngIf= "!readSessionStorage()"> 
+  {{navigate()}}
+</h4> 
 <div class="card-wrapper">
     <div class="card"><i class="fas fa-microchip"></i>{{'CPU' |translate }}
     <div class="card-body">

@@ -3,6 +3,8 @@ import { Input } from '@angular/core';
 import { TreeNode } from './tree-node';
 import {TreeService} from '../service/tree.service'
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-tree',
@@ -16,7 +18,7 @@ export class TreeComponent implements OnInit {
   static loadedIntial:string='not';
   loading: boolean = false;
   errorMessage
-  constructor(private treeService: TreeService,public translate: TranslateService) {
+  constructor(private treeService: TreeService,public translate: TranslateService,private router:Router) {
 
     console.log(TreeComponent.loadedIntial)
     if(TreeComponent.loadedIntial!='Loaded'){
@@ -67,4 +69,19 @@ eventsCreation(){
         )
   }
   
+  readSessionStorage(){
+    if(sessionStorage.getItem("loggedin")=='true'){
+      return true;
+    }else{
+      return false;
+
+    }
+
+  }
+
+  navigate(){
+    this.router.navigateByUrl('/')
+
+  }
+
 }

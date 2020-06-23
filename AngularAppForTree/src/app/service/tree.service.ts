@@ -14,7 +14,7 @@ export class TreeService {
   getHardWareDetails(): Observable<any> {
     console.log('this....');
     
-    return this.http.get<any>('http://localhost:8885/')
+    return this.http.get<any>('http://localhost:8000/tree')
   }
 
 

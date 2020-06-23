@@ -22,8 +22,6 @@ describe('Terminal View Component ', () => {
   let translate: TranslateService;
 
   const fakeResp = "Prefix12=${appdata}\nsuffix12123=${appdata}"
-
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
 
 import { cpuContent } from './cpuContents';
 import { CpuDetailsService } from '../service/cpu-details.service';
@@ -10,7 +11,7 @@ import { CpuDetailsService } from '../service/cpu-details.service';
 })
 export class CpuDetailsComponent implements OnInit {
   language;
-  constructor(private cpuDataService: CpuDetailsService, public translate: TranslateService) {
+  constructor(private router: Router,private cpuDataService: CpuDetailsService, public translate: TranslateService) {
 
   }
   batteryInfo;
@@ -79,7 +80,22 @@ export class CpuDetailsComponent implements OnInit {
       this.batteryDetails.push(content);
     }
 
+
+  }
+  navigate(){
+    this.router.navigateByUrl('http://localhost:4200/')
+
   }
 
+  readSessionStorage(){
+    if(sessionStorage.getItem("loggedin")=='true'){
+      return true;
+    }else{
+      return false;
 
+    }
+
+  }
+
+ 
 }

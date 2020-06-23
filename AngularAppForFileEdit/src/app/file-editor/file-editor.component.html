@@ -1,4 +1,8 @@
 <!-- Editable table -->
+
+<h4  *ngIf= "!readPermission()"> 
+  {{navigate()}}
+</h4>
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">{{'Data From npmrc' | translate }}</h3>
   <div class="card-body">

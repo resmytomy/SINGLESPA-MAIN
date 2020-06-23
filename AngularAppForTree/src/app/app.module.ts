@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { TokenInterceptor } from './service/token.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +34,9 @@ export const createTranslateLoader=function HttpLoaderFactory(http: HttpClient) 
       }
   })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -9,8 +10,46 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavigationDetailsComponent implements OnInit {
   static language:string="en";
+  load =false;
 
-  constructor( public translate: TranslateService) {  
+  loadingDIv(){
+    this.load=true;
+
+  }
+  readSessionStorage(){
+    if(sessionStorage.getItem("loggedin")=='true'){
+      return true;
+    }else{
+      return false;
+
+    }
+
+  }
+  
+
+  readPermission(){
+    if(sessionStorage.getItem("loggedin")=='true' && sessionStorage.getItem("type")=='admin'){
+      return true;
+    }else{
+      return false;
+
+    }
+
+
+  }
+  LogOut(){
+    this.router.navigateByUrl('/');
+    sessionStorage.setItem("loggedin",'flase');
+    sessionStorage.removeItem("userName");
+    sessionStorage.removeItem("userPassword");
+    sessionStorage.removeItem("userTyp");
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('refreshToken');
+
+     
+  }
+
+  constructor( public translate: TranslateService,private router: Router) {  
     
       translate.setDefaultLang('en');  
     } 
@@ -22,11 +61,8 @@ export class NavigationDetailsComponent implements OnInit {
       evt.detail.testobj.testFunction( NavigationDetailsComponent.language);
     })
   }
-// onClick(){
-//   window.dispatchEvent(new CustomEvent('languageTranslation', {detail:{ "language":NavigationDetailsComponent.language}}));
+ 
 
-//   console.log("Onclick...")
-// }
 
 changeLang(language: string) { 
   console.log("Change lang clicked")
@@ -35,4 +71,5 @@ changeLang(language: string) {
   this.translate.use(language);  
   
 }  
+
 }

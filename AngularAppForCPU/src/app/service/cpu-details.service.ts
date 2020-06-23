@@ -10,7 +10,7 @@ export class CpuDetailsService {
   constructor(private http: HttpClient) {
   }
  getCpuDetails(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/')
+    return this.http.get<any>('http://localhost:8000/cpu')
   }
 
 

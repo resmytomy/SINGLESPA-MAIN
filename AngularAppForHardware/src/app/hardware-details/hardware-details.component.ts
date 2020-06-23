@@ -92,4 +92,14 @@ for (let key in this.chassisInfo) {
 }
 
 }
+readSessionStorage(){
+  if(sessionStorage.getItem("loggedin")=='true'){
+    return true;
+  }else{
+    return false;
+
+  }
+
+}
+
 }

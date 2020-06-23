@@ -67,7 +67,7 @@ describe('FileEditorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call ngOnit() and from ngOnit it should call getfileContent()', () => {
+  it('should call ngOnit() and  it should call getfileContent()', () => {
     const spy = spyOn(component, 'getfileContent');
     component.ngOnInit();
     expect(spy).toHaveBeenCalled();

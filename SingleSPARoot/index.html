@@ -11,9 +11,11 @@
       {
         "imports": {
           "navBar": "http://localhost:4205/main.js",
-          "log": "http://localhost:4208/main.js",
           "file": "http://localhost:4210/main.js",
           "cpu": "http://localhost:4203/main.js",
+          "add": "http://localhost:4308/main.js",
+          "log": "http://localhost:4208/main.js",
+          "Login": "http://localhost:4305/main.js",
           "tree": "http://localhost:4206/main.js",
           "hw": "http://localhost:4204/main.js",
           "terminal": "http://localhost:4207/main.js",
@@ -46,6 +48,17 @@
           }
         )
         singleSpa.registerApplication(
+          'add',
+          function () {
+            return System.import('add');
+          },
+          function (location) {
+            return location.pathname.startsWith('/add');
+           // return true;
+          }
+        )
+        
+        singleSpa.registerApplication(
           'cpu',
           function () {
             return System.import('cpu');
@@ -53,6 +66,16 @@
           function (location) {
             return location.pathname.startsWith('/cpu');
            // return true;
+          }
+        )
+        singleSpa.registerApplication(
+          'Login',
+          function () {
+            return System.import('Login');
+          },
+          function (location) {
+          return location.pathname.startsWith('/Login');
+          return true;
           }
         )
         singleSpa.registerApplication(
@@ -84,7 +107,7 @@
           },
           function (location) {
             return location.pathname.startsWith('/tree');
-            return true;
+          //  return true;
           }
         )
 
@@ -95,7 +118,7 @@
           },
           function (location) {
             return location.pathname.startsWith('/hw');
-            return true;
+           // return true;
           }
         )
         singleSpa.registerApplication(
@@ -104,8 +127,14 @@
             return System.import('navBar');
           },
           function (location) {
-         //    return location.pathname.startsWith('/app1');
-          return true;
+
+      console.log('Location',location)  
+          if(location.pathname==('/login')){      
+            return false;
+        
+          }else{
+            return true;
+          }
           }
         );
         

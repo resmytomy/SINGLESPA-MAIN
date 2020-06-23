@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TermnalViewService } from '../service/terminal-view.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -10,7 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TerminalViewComponent {
 
-  constructor(private service: TermnalViewService,public translate: TranslateService) {}
+  constructor(private service: TermnalViewService,public translate: TranslateService,private router: Router) { }
+
   static previousCommands:string[]=[];
   result:any;
   command:string;
@@ -20,6 +22,7 @@ export class TerminalViewComponent {
   ngOnInit(): void {
     this.eventsCreation();
    }
+   
   eventsCreation() {
     var testobj ={ 
       testFunction: (lang)=>{
@@ -62,4 +65,19 @@ copy(cmd){
  get prevCommand(){
    return TerminalViewComponent.previousCommands;
  }
+ navigate(){
+  this.router.navigateByUrl('http://localhost:4200/')
+
+}
+
+readSessionStorage(){
+  if(sessionStorage.getItem("loggedin")=='true'){
+    return true;
+  }else{
+    return false;
+
+  }
+
+}
+
 }

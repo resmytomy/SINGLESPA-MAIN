@@ -12,12 +12,13 @@ export class FileEditorService {
   }
   
   getfileContent(): Observable<string> {
+    console.log('inside file get ')
     
-    return this.http.get<string>('http://localhost:8098/')
+    return this.http.get<string>('http://localhost:8000/fileContent')
   }
   updateFileContents(data): Observable<string> {
 
-    return this.http.post<string>('http://localhost:8098/edit/',{'data':data});
+    return this.http.post<string>('http://localhost:8000/writeFile',{'data':data});
 
   }
 }

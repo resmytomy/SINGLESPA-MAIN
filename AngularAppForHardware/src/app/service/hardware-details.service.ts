@@ -16,6 +16,6 @@ export class HardwareDetailsService {
   getHardWareDetails(): Observable<any> {
     console.log('this....');
     
-    return this.http.get<any>('http://localhost:8888/')
+    return this.http.get<any>('http://localhost:8000/hw')
 }
 }

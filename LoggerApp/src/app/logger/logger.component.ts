@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'logger-app-logger',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoggerComponent implements OnInit {
 static logs:string[]=[];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
@@ -18,6 +20,19 @@ static logs:string[]=[];
   }
   get staticlogs(){
     return LoggerComponent.logs;
+  }
+  readSessionStorage(){
+    if(sessionStorage.getItem("loggedin")=='true'){
+      return true;
+    }else{
+      return false;
+
+    }
+
+  }
+  navigate(){
+    this.router.navigateByUrl('http://localhost:4200/')
+
   }
 
 }

@@ -18,7 +18,8 @@ export class TermnalViewService {
  
 
   executeCOmmand(data): Observable<string> {
-    return this.http.post<string>('http://localhost:8095/executeCommand ',{'data':data});
+    console.log('inside nnnnn')
+    return this.http.post<string>('http://localhost:8000/executeCommand',{'data':data});
 
   }
 

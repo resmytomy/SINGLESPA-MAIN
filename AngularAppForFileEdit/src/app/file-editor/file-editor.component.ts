@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
 
 import { FileEditorService } from '../service/file-editor.service';
 import { fileContent } from './fileContents';
@@ -11,7 +12,7 @@ import { fileContent } from './fileContents';
 })
 export class FileEditorComponent {
 
-  constructor(private fileEditorService: FileEditorService, public translate: TranslateService) { }
+  constructor(private router: Router,private fileEditorService: FileEditorService, public translate: TranslateService) { }
   contents;
   i: number = 0;
   response: any;
@@ -129,6 +130,28 @@ export class FileEditorComponent {
     this.fileContentList.push(content);
     this.i = this.i + 1;
   }
+  readSessionStorage(){
+    if(sessionStorage.getItem("loggedin")=='true' && sessionStorage.getItem("role")=='admin'){
+      return true;
+    }else{
+      return false;
+
+    }
+
+  }
+  navigate(){
+    this.router.navigateByUrl('/')
+
+  }
+
+  readPermission(){
+    if(sessionStorage.getItem("loggedin")=='true' && sessionStorage.getItem("type")=='admin'){
+      return true;
+    }else{
+      return false;
+
+    }
+}
 
 
 }

@@ -6,7 +6,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 describe('CpuDetailsService', () => {
   let service: CpuDetailsService;
   const fakeResp="6.14.4"
-  const fakeRespAfterUpdate="Prefix12=${appdata}\nsuffix12123=${appdata}\nNew=NewValue"
+
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe('CpuDetailsService', () => {
       expect(data).toEqual(fakeResp);
     });
 
-    const request = httpTestingController.expectOne('http://localhost:8080/');
+    const request = httpTestingController.expectOne('http://localhost:8777/');
     expect(request.request.method).toBe('GET');
     request.flush(fakeResp);
   });
