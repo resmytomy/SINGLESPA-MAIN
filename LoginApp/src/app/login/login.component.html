@@ -1,4 +1,7 @@
-<div class="container mt-5">
+<h4  *ngIf= "readSessionStorage()"> 
+  Logged in user {{getUser()}} 
+</h4> 
+<div *ngIf= "!readSessionStorage()" class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-5 col-10">
       <h2 class="mb-4">Please sign in</h2>
