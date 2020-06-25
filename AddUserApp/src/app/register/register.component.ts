@@ -59,4 +59,19 @@ export class RegisterComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+    navigate(){
+        this.router.navigateByUrl('/')
+    
+      }
+    
+      readPermission(){
+        if(sessionStorage.getItem("loggedin")=='true' && sessionStorage.getItem("type")=='admin'){
+          return true;
+        }else{
+          return false;
+    
+        }
+    }
+    
 }
