@@ -21,24 +21,23 @@ export class AuthService {
 
   constructor(private http: HttpClient,
               private localStorageService: LocalStorageService) { }
+register(form: {username: string; password: string,type:string}): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${environment.apiUrl}/register`, form);
+      // .pipe(
+      //   tap(response => {
+      //   //     console.log("userName",response.user.username);
+      //   //     sessionStorage.setItem("loggedin",'true');
 
-  register(form: {username: string; password: string,type:string}): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${environment.apiUrl}/register`, form)
-      .pipe(
-        tap(response => {
-        //     console.log("userName",response.user.username);
-        //     sessionStorage.setItem("loggedin",'true');
-
-        //  sessionStorage.setItem("userName",response.user.username);
-        //  sessionStorage.setItem("userPassword",response.user.password);
-        //  sessionStorage.setItem("userTyp",response.user.type);
-        //  sessionStorage.setItem('token', response.accessToken);
-        // //  sessionStorage.setItem('refreshToken', response.refreshToken);
-        //    this.user$.next(response.user);
-        //   this.setToken('token', response.accessToken);
-        //   this.setToken('refreshToken', response.refreshToken);
-        })
-      );
+      //   //  sessionStorage.setItem("userName",response.user.username);
+      //   //  sessionStorage.setItem("userPassword",response.user.password);
+      //   //  sessionStorage.setItem("userTyp",response.user.type);
+      //   //  sessionStorage.setItem('token', response.accessToken);
+      //   // //  sessionStorage.setItem('refreshToken', response.refreshToken);
+      //   //    this.user$.next(response.user);
+      //   //   this.setToken('token', response.accessToken);
+      //   //   this.setToken('refreshToken', response.refreshToken);
+      //   })
+      // );
   }
 
   logout(): void {
