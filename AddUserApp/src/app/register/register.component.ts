@@ -49,13 +49,13 @@ export class RegisterComponent implements OnInit {
                    .subscribe(
                 data => {
                   console.log(data)
-                  window.alert('SUcessfully registred the user')
+                  window.alert(data)
 
               //this.alertService.success('Registration successful', true);
                     this.router.navigateByUrl('/');
                 },
                 error => {
-                 // window.alert(error)
+                 window.alert(error)
                     this.loading = false;
                 });
     }

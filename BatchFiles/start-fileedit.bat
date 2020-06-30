@@ -1,1 +1,0 @@
- start /min cmd /k "cd .. && cd NodeForFileEdit &&  IF EXIST node_modules (node server.js) ELSE ( npm install && node server.js)"

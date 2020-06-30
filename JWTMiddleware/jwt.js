@@ -19,7 +19,7 @@ function getAccessToken(payload) {
 //     mockDB.tokens = mockDB.tokens.filter(token => token.userId !== payload.id);
 //   }
 
-//   const refreshToken = jwt.sign({user: payload}, jwtSecretString, { expiresIn: '30d' });
+//   const refreshToken = jwt.sign({user: payload}, jwtSecretString, { expiresIn: '15min' });
 
 //   mockDB.tokens.push({
 //     id: uuidv1(),

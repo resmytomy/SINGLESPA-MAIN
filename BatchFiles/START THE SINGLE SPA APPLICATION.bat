@@ -1,4 +1,4 @@
-    start /min cmd /c  "IF EXIST node_modules (node run.js) ELSE ( npm install && node run.js)"
+    start /min cmd /k  "IF EXIST node_modules (node startApps.js) ELSE ( npm install && node startApps.js)"
 
  
 

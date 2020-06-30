@@ -51,55 +51,15 @@ app.post('/login', function (req, res) {
 
 
 app.post('/register', function (req, res) {
-  fileUtilObject.write('data.mock.js',req).then( data=>  res.json('Registration not sucess!'))
+  const user = users.find(user => user.username === req.body.username);
+  if(user){
+    return res.json('Username already exists');
+    }else{
+
+  fileUtilObject.write('data.mock.js',req).then( data=>  res.json('Registration sucess!'))
   .catch(err=>res.json(err));
+    }
   
-  // console.log('inside register');
-  // const loginData = req.body;
-  // users.push({
-  //   first_name: loginData.firstName,
-  //   last_name: loginData.lastName,
-  //   username: loginData.username,
-  //   password: loginData.password,
-  //   role: loginData.type
-  // });
-
-  // let final = "users =" + JSON.stringify(users) + "\n\r module.exports=users";
-
-
-  // fs.writeFile("data.mock.js", final, (err, data) => {
-  //   if (err) {
-  //     console.log('errrr '+err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
-  //     return        // and we don't want to go any further
-
-  //   }
-  //   if(data){
-  //   console.log('dataaa',data)
-  //   }
-
-  // })
-
-
-  // // fs.writeFile("data.mock.js", final, (err, data) => {
-
-  // //   if (err) {
-  // //     console.log("errro writing"); // Success 
-
-  // //     return res.status(400).send('Registration not sucess!');
-  // //   }
-  // //   if (data) {
-  // //     console.log("Done writing"); // Success 
-
-  // //     const user = users.find(user => user.username === loginData.username);
-
-  // //     if (!user) {
-  // //       return res.status(400).send('Registration not sucess!');
-  // //     }
-
-  // //     return res.status(201).send('Registration  sucess!');
-  // //   }
-
-  // // });
 
 });
 
@@ -141,7 +101,6 @@ app.get('/tree', jwtMiddleware, function (req, res) {
 });
 
 app.get('/fileContent', jwtMiddleware, function (req, res) {
-  console.log('inside get file content ')
   try {
     axios.get("http://localhost:8080/")
       .then((data) => res.json(data.data))
