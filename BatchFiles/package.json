@@ -17,7 +17,7 @@
     "morgan": "~1.9.1",
     "prompt": "^1.0.0",
     "pug": "2.0.0-beta11",
-    "systeminformation": "^4.23.3"
+    "systeminformation": "^5.3.1"
   },
   "devDependencies": {
     "jest": "^26.0.1",
